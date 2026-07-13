@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AnalysisMode>All</AnalysisMode>
+    <IsPackable>true</IsPackable>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoWarn>$(NoWarn);RS2008;NU5128</NoWarn>
+
+    <AssemblyName>colinfang.$(MSBuildProjectName)</AssemblyName>
+    <PackageId>colinfang.$(MSBuildProjectName)</PackageId>
+    <Version>1.0.7</Version>
+    <Authors>colinfang</Authors>
+    <Description>Personal C# Analyzers Collection</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(TargetDir)$(TargetName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.8.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

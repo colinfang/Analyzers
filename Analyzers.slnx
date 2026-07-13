@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Analyzers\Analyzers.csproj" />
+  <Project Path="Analyzers.Tests\Analyzers.Tests.csproj" />
+</Solution>
